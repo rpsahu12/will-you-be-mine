@@ -1,9 +1,11 @@
 function moveRandomEl(elm) {
-  const x = Math.random() * 90 + 5;
-  const y = Math.random() * 90 + 5;
-  elm.style.transform = `translate(${x}vw, ${y}vh)`;
+  elm.style.position = "absolute";
+  elm.style.top = Math.floor(Math.random() * 90 + 5) + "%";
+  elm.style.left = Math.floor(Math.random() * 90 + 5) + "%";
 }
 
-document.querySelector("#move-random").addEventListener("mouseover", (e) => {
+const moveRandom = document.querySelector("#move-random");
+
+moveRandom.addEventListener("mouseenter", function (e) {
   moveRandomEl(e.target);
 });
